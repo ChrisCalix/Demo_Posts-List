@@ -28,67 +28,29 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
     
     func test_load_doesNotFoundFileNameError() {
         let (sut, reader) = makeSUT()
-        let readerError = LocalFeedLoader.Error.notFound
         
-        let exp = expectation(description: "wait for load completion")
-        
-        sut.load { result in
-            defer { exp.fulfill() }
-            
-            switch result {
-            case let .failure(receivedError as LocalFeedLoader.Error):
-                XCTAssertEqual(receivedError, readerError)
-            default:
-                XCTFail("Error in completion method")
-            }
+        expect(sut, toCompleteWith: .failure(.notFound)) {
+            let readerError = LocalFeedLoader.Error.notFound
+            reader.complete(with: readerError)
         }
-        reader.complete(with: readerError)
-        
-        waitForExpectations(timeout: 0.1)
     }
     
     func test_load_deliversInvalidDataFromFileNameWithInvalidJSON() {
         let (sut, reader) = makeSUT()
-        let readerError = LocalFeedLoader.Error.invalidData
         
-        let exp = expectation(description: "wait for load completion")
-        
-        sut.load { result in
-            defer { exp.fulfill() }
-            
-            switch result {
-            case let .failure(receivedError as LocalFeedLoader.Error):
-                XCTAssertEqual(receivedError, readerError)
-            default:
-                XCTFail("Error in completion Method")
-            }
+        expect(sut, toCompleteWith: .failure(.invalidData)) {
+            let invalidJSON = Data("Invalid JSON".utf8)
+            reader.complete(with: invalidJSON)
         }
-        
-        let invalidJSON = Data("Invalid JSON".utf8)
-        reader.complete(with: invalidJSON)
-        
-        waitForExpectations(timeout: 0.1)
     }
     
     func test_load_deliversSuccessWithNoItemsFromFileNameWithEmptyJSONList() {
         let (sut, reader) = makeSUT()
         
-        let exp = expectation(description: "wait for load completion")
-        
-        sut.load { result in
-            defer{ exp.fulfill() }
-            
-            switch result {
-            case let .success(receivedData):
-                XCTAssertTrue(receivedData.isEmpty)
-            default:
-                XCTFail("Error in completion method")
-            }
+        expect(sut, toCompleteWith: .success([])) {
+            let json = makePostsListJSON([])
+            reader.complete(with: json)
         }
-        
-        reader.complete(with: makePostsListJSON([]))
-        
-        waitForExpectations(timeout: 0.1)
     }
     
     func test_load_deliversSuccessWithItemsFromFileNameWithNoEmptyJSONItems() {
@@ -98,21 +60,10 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         let item2 = makePost()
         let item3 = makePost()
         
-        let exp = expectation(description: "wait for load completion")
-        
-        sut.load { result in
-            switch result {
-            case let .success(receivedData):
-                XCTAssertEqual(receivedData, [item1.model, item2.model, item3.model])
-            default:
-                XCTFail("Error in completion method")
-            }
-            exp.fulfill()
+        expect(sut, toCompleteWith: .success([item1.model, item2.model, item3.model])) {
+            let json = makePostsListJSON([item1.json, item2.json, item3.json])
+            reader.complete(with: json)
         }
-        
-        reader.complete(with: makePostsListJSON([item1.json, item2.json, item3.json]))
-        
-        waitForExpectations(timeout: 0.1)
     }
     
     //MARK: Helpers
@@ -138,6 +89,33 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         ].compactMapValues{ $0 }
         
         return (item, json)
+    }
+    
+    private func expect(_ sut: LocalFeedLoader,
+                          toCompleteWith expectedResult: Result<[FeedPost], LocalFeedLoader.Error>,
+                          when action: ()-> Void,
+                          file: StaticString = #filePath,
+                          line: UInt = #line) {
+        let exp = expectation(description: "Wait for load completion")
+        
+        sut.load { receivedResult in
+            defer { exp.fulfill() }
+            
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedItems), .success(expectedItems)):
+                XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
+                
+            case let (.failure(receivedError as LocalFeedLoader.Error), .failure(expectedError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+                
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+            }
+        }
+        
+        action()
+        
+        waitForExpectations(timeout: 0.1)
     }
 }
 
