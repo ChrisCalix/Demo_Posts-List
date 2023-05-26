@@ -94,21 +94,23 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
     func test_load_deliversSuccessWithItemsFromFileNameWithNoEmptyJSONItems() {
         let (sut, reader) = makeSUT()
         
-        let item = makePost()
+        let item1 = makePost()
+        let item2 = makePost()
+        let item3 = makePost()
         
         let exp = expectation(description: "wait for load completion")
         
         sut.load { result in
             switch result {
             case let .success(receivedData):
-                XCTAssertEqual(receivedData, [item.model])
+                XCTAssertEqual(receivedData, [item1.model, item2.model, item3.model])
             default:
                 XCTFail("Error in completion method")
             }
             exp.fulfill()
         }
         
-        reader.complete(with: makePostsListJSON([item.json]))
+        reader.complete(with: makePostsListJSON([item1.json, item2.json, item3.json]))
         
         waitForExpectations(timeout: 0.1)
     }
