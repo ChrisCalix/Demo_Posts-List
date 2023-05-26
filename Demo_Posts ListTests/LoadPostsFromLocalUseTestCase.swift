@@ -86,11 +86,12 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
             }
         }
         
-        let emptyJSON = Data("[]".utf8)
-        reader.complete(with: emptyJSON)
+        reader.complete(with: makePostsListJSON([]))
         
         waitForExpectations(timeout: 0.1)
     }
+    
+    
     //MARK: Helpers
     
     private func makeSUT(fileName: String = "PostsList.json",
@@ -99,6 +100,10 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         let reader = FileReaderSpy()
         let sut = LocalFeedLoader(fileName: fileName, reader: reader)
         return (sut, reader)
+    }
+    
+    private func makePostsListJSON(_ items: [[String: Any]]) -> Data {
+        return try! JSONSerialization.data(withJSONObject: items)
     }
 }
 
