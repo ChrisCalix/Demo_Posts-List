@@ -47,6 +47,29 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         waitForExpectations(timeout: 0.1)
     }
     
+    func test_load_deliversInvalidDataFromFileNameWithInvalidJSON() {
+        let (sut, reader) = makeSUT()
+        let readerError = LocalFeedLoader.Error.invalidData
+        
+        let exp = expectation(description: "wait for load completion")
+        
+        sut.load { result in
+            defer { exp.fulfill() }
+            
+            switch result {
+            case let .failure(receivedError as LocalFeedLoader.Error):
+                XCTAssertEqual(receivedError, readerError)
+            default:
+                XCTFail("Error in completion Method")
+            }
+        }
+        
+        let invalidJSON = Data("Invalid JSON".utf8)
+        reader.complete(with: invalidJSON)
+        
+        waitForExpectations(timeout: 0.1)
+    }
+    
     //MARK: Helpers
     
     private func makeSUT(fileName: String = "PostsList.json",
@@ -78,5 +101,12 @@ private final class FileReaderSpy: FileReader {
             return XCTFail("Can't complete request never made")
         }
         messages[index].completion(.failure(error))
+    }
+    
+    func complete(with data: Data, at index: Int = 0, file: StaticString = #filePath, line: UInt = #line) {
+        guard messages.indices.contains(index) else {
+            return XCTFail("Can't complete request naver made")
+        }
+        messages[index].completion(.success(data))
     }
 }
