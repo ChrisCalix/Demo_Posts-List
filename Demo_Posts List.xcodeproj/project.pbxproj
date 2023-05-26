@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C33FB6182A21775F0025B725 /* FileReaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB6172A21775F0025B725 /* FileReaderSpy.swift */; };
 		C33FB61A2A2177C20025B725 /* LoadPostsFromLocalUseTestCase+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB6192A2177C20025B725 /* LoadPostsFromLocalUseTestCase+Helper.swift */; };
+		C33FB61C2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB61B2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift */; };
+		C33FB61E2A217A320025B725 /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB61D2A217A320025B725 /* JSONFileReader.swift */; };
 		C36E70582A2137C900F6188C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70572A2137C900F6188C /* AppDelegate.swift */; };
 		C36E705A2A2137C900F6188C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70592A2137C900F6188C /* SceneDelegate.swift */; };
 		C36E70612A2137CB00F6188C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36E70602A2137CB00F6188C /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		C33FB6172A21775F0025B725 /* FileReaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderSpy.swift; sourceTree = "<group>"; };
 		C33FB6192A2177C20025B725 /* LoadPostsFromLocalUseTestCase+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadPostsFromLocalUseTestCase+Helper.swift"; sourceTree = "<group>"; };
+		C33FB61B2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPostsFromLocalJSONFileUseTestCase.swift; sourceTree = "<group>"; };
+		C33FB61D2A217A320025B725 /* JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
 		C36E70542A2137C900F6188C /* Demo_Posts List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo_Posts List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E70572A2137C900F6188C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C36E70592A2137C900F6188C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			children = (
 				C33FB6162A2177520025B725 /* Helpers */,
 				C36E70862A213F6B00F6188C /* LoadPostsFromLocalUseTestCase.swift */,
+				C33FB61B2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift */,
 			);
 			path = "Demo_Posts ListTests";
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				C36E708B2A2140D800F6188C /* FeedLoader.swift */,
 				C36E708D2A21410900F6188C /* FeedPost.swift */,
 				C36E708F2A21414900F6188C /* LocalFeedLoader.swift */,
+				C33FB61D2A217A320025B725 /* JSONFileReader.swift */,
 			);
 			path = FeedLoader;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				C36E70752A213AB000F6188C /* PostsListViewController.swift in Sources */,
 				C36E70982A21487A00F6188C /* FeedMapper.swift in Sources */,
 				C36E70712A213A6600F6188C /* UIViewController+Extension.swift in Sources */,
+				C33FB61E2A217A320025B725 /* JSONFileReader.swift in Sources */,
 				C36E70772A213B5800F6188C /* Contants.swift in Sources */,
 				C36E70582A2137C900F6188C /* AppDelegate.swift in Sources */,
 				C36E705A2A2137C900F6188C /* SceneDelegate.swift in Sources */,
@@ -311,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36E70872A213F6B00F6188C /* LoadPostsFromLocalUseTestCase.swift in Sources */,
+				C33FB61C2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift in Sources */,
 				C33FB61A2A2177C20025B725 /* LoadPostsFromLocalUseTestCase+Helper.swift in Sources */,
 				C33FB6182A21775F0025B725 /* FileReaderSpy.swift in Sources */,
 			);
