@@ -16,6 +16,16 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         
         XCTAssertTrue(reader.requestedFiles.isEmpty)
     }
+    
+    func test_load_onceRequestDataFromFile() {
+        let fileName = "PostsList.json"
+        let reader = FileReaderSpy()
+        let sut = LocalFeedLoader(fileName: fileName, reader: reader)
+        
+        sut.load { _ in }
+        
+        XCTAssertEqual(reader.requestedFiles, [fileName])
+    }
 }
 
 private final class FileReaderSpy: FileReader {
@@ -28,6 +38,6 @@ private final class FileReaderSpy: FileReader {
     }
     
     func get(from fileName: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        
+        messages.append((fileName, completion))
     }
 }
