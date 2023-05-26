@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct FeedPost: Decodable {
-    
+struct FeedPost: Decodable, Equatable {
+    let name: String
+    let description: String
 }

@@ -91,6 +91,27 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         waitForExpectations(timeout: 0.1)
     }
     
+    func test_load_deliversSuccessWithItemsFromFileNameWithNoEmptyJSONItems() {
+        let (sut, reader) = makeSUT()
+        
+        let item = makePost()
+        
+        let exp = expectation(description: "wait for load completion")
+        
+        sut.load { result in
+            switch result {
+            case let .success(receivedData):
+                XCTAssertEqual(receivedData, [item.model])
+            default:
+                XCTFail("Error in completion method")
+            }
+            exp.fulfill()
+        }
+        
+        reader.complete(with: makePostsListJSON([item.json]))
+        
+        waitForExpectations(timeout: 0.1)
+    }
     
     //MARK: Helpers
     
@@ -104,6 +125,17 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
     
     private func makePostsListJSON(_ items: [[String: Any]]) -> Data {
         return try! JSONSerialization.data(withJSONObject: items)
+    }
+    
+    private func makePost() -> (model: FeedPost, json: [String: Any]) {
+        let item = FeedPost(name: "name", description: "description")
+        
+        let json = [
+            "name": item.name,
+            "description": item.description
+        ].compactMapValues{ $0 }
+        
+        return (item, json)
     }
 }
 
