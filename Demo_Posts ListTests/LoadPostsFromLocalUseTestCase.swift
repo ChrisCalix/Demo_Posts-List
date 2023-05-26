@@ -70,6 +70,27 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         waitForExpectations(timeout: 0.1)
     }
     
+    func test_load_deliversSuccessWithNoItemsFromFileNameWithEmptyJSONList() {
+        let (sut, reader) = makeSUT()
+        
+        let exp = expectation(description: "wait for load completion")
+        
+        sut.load { result in
+            defer{ exp.fulfill() }
+            
+            switch result {
+            case let .success(receivedData):
+                XCTAssertTrue(receivedData.isEmpty)
+            default:
+                XCTFail("Error in completion method")
+            }
+        }
+        
+        let emptyJSON = Data("[]".utf8)
+        reader.complete(with: emptyJSON)
+        
+        waitForExpectations(timeout: 0.1)
+    }
     //MARK: Helpers
     
     private func makeSUT(fileName: String = "PostsList.json",
