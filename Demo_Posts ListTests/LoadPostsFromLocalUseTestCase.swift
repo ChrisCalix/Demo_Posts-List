@@ -17,14 +17,15 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         XCTAssertTrue(reader.requestedFiles.isEmpty)
     }
     
-    func test_load_onceRequestDataFromFile() {
+    func test_load_twiceRequestDataFromFileTwice() {
         let fileName = "PostsList.json"
         let reader = FileReaderSpy()
         let sut = LocalFeedLoader(fileName: fileName, reader: reader)
         
         sut.load { _ in }
+        sut.load { _ in }
         
-        XCTAssertEqual(reader.requestedFiles, [fileName])
+        XCTAssertEqual(reader.requestedFiles, [fileName, fileName])
     }
 }
 
