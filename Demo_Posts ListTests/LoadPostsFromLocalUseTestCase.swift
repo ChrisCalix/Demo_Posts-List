@@ -27,6 +27,28 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         
         XCTAssertEqual(reader.requestedFiles, [fileName, fileName])
     }
+    
+    func test_load_doesNotFoundFileNameError() {
+        let reader = FileReaderSpy()
+        let sut = LocalFeedLoader(fileName: "PostsList.json", reader: reader)
+        let readerError = LocalFeedLoader.Error.notFound
+        
+        let exp = expectation(description: "wait for load completion")
+        
+        sut.load { result in
+            defer { exp.fulfill() }
+            
+            switch result {
+            case let .failure(receivedError as LocalFeedLoader.Error):
+                XCTAssertEqual(receivedError, readerError)
+            default:
+                XCTFail("Error in completion method")
+            }
+        }
+        reader.complete(with: readerError)
+        
+        waitForExpectations(timeout: 0.1)
+    }
 }
 
 private final class FileReaderSpy: FileReader {
@@ -40,5 +62,12 @@ private final class FileReaderSpy: FileReader {
     
     func get(from fileName: String, completion: @escaping (Result<Data, Error>) -> Void) {
         messages.append((fileName, completion))
+    }
+    
+    func complete(with error: Error, at index: Int = 0, file: StaticString = #filePath, line: UInt = #line) {
+        guard messages.indices.contains(index) else {
+            return XCTFail("Can't complete request never made")
+        }
+        messages[index].completion(.failure(error))
     }
 }

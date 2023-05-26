@@ -20,6 +20,7 @@
 		C36E708C2A2140D800F6188C /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E708B2A2140D800F6188C /* FeedLoader.swift */; };
 		C36E708E2A21410900F6188C /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E708D2A21410900F6188C /* FeedPost.swift */; };
 		C36E70902A21414900F6188C /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E708F2A21414900F6188C /* LocalFeedLoader.swift */; };
+		C36E70952A21459400F6188C /* LocalFeedLoader+Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70942A21459400F6188C /* LocalFeedLoader+Error+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C36E708B2A2140D800F6188C /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		C36E708D2A21410900F6188C /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
 		C36E708F2A21414900F6188C /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
+		C36E70942A21459400F6188C /* LocalFeedLoader+Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalFeedLoader+Error+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		C36E70562A2137C900F6188C /* Demo_Posts List */ = {
 			isa = PBXGroup;
 			children = (
+				C36E70912A2144A300F6188C /* Utils */,
 				C36E70882A213FDC00F6188C /* FeedLoader */,
 				C36E706F2A213A5500F6188C /* Extensions */,
 				C36E706D2A2139DD00F6188C /* Models */,
@@ -132,6 +135,7 @@
 			children = (
 				C36E70702A213A6500F6188C /* UIViewController+Extension.swift */,
 				C36E70762A213B5800F6188C /* Contants.swift */,
+				C36E70942A21459400F6188C /* LocalFeedLoader+Error+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,6 +157,13 @@
 				C36E708F2A21414900F6188C /* LocalFeedLoader.swift */,
 			);
 			path = FeedLoader;
+			sourceTree = "<group>";
+		};
+		C36E70912A2144A300F6188C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36E708C2A2140D800F6188C /* FeedLoader.swift in Sources */,
+				C36E70952A21459400F6188C /* LocalFeedLoader+Error+Extension.swift in Sources */,
 				C36E708E2A21410900F6188C /* FeedPost.swift in Sources */,
 				C36E708A2A213FEF00F6188C /* FileReader.swift in Sources */,
 				C36E70902A21414900F6188C /* LocalFeedLoader.swift in Sources */,
