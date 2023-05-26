@@ -11,16 +11,14 @@ import XCTest
 final class LoadPostsFromLocalUseTestCase: XCTestCase {
     
     func test_init_doesNotDataFromLocalJson() {
-        let reader = FileReaderSpy()
-        let _ = LocalFeedLoader(fileName: "PostsList.json", reader: reader)
+        let (_, reader) = makeSUT()
         
         XCTAssertTrue(reader.requestedFiles.isEmpty)
     }
     
     func test_load_twiceRequestDataFromFileTwice() {
         let fileName = "PostsList.json"
-        let reader = FileReaderSpy()
-        let sut = LocalFeedLoader(fileName: fileName, reader: reader)
+        let (sut, reader) = makeSUT(fileName: fileName)
         
         sut.load { _ in }
         sut.load { _ in }
@@ -29,8 +27,7 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
     }
     
     func test_load_doesNotFoundFileNameError() {
-        let reader = FileReaderSpy()
-        let sut = LocalFeedLoader(fileName: "PostsList.json", reader: reader)
+        let (sut, reader) = makeSUT()
         let readerError = LocalFeedLoader.Error.notFound
         
         let exp = expectation(description: "wait for load completion")
@@ -49,7 +46,19 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
         
         waitForExpectations(timeout: 0.1)
     }
+    
+    //MARK: Helpers
+    
+    private func makeSUT(fileName: String = "PostsList.json",
+                         file: StaticString = #filePath,
+                         line: UInt = #line) -> (sut: LocalFeedLoader, reader: FileReaderSpy){
+        let reader = FileReaderSpy()
+        let sut = LocalFeedLoader(fileName: fileName, reader: reader)
+        return (sut, reader)
+    }
 }
+
+
 
 private final class FileReaderSpy: FileReader {
     
