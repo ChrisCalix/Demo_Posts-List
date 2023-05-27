@@ -30,6 +30,7 @@ protocol PostsListViewPresentable {
     var output: Self.Output { get }
     
     func fetchAllPosts()
+    func addNewPost(using newPost: PostModel)
 }
 
 struct PostsListViewModel: PostsListViewPresentable {
@@ -66,7 +67,7 @@ struct PostsListViewModel: PostsListViewPresentable {
         }
     }
     
-    private func addNewPost(using newPost: PostModel) {
+    func addNewPost(using newPost: PostModel) {
         lock.lock();
         defer { lock.unlock() }
         var posts = state.posts.value

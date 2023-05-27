@@ -40,9 +40,8 @@ final class PostsListViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
-        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
-        addBarButton.tintColor = UIColor.label
-        navigationItem.setRightBarButton(addBarButton, animated: true)
+        
+        navigationItem.setRightBarButton(makeAddBarButton(), animated: true)
     }
     
     private func configureViewModel() {
@@ -64,8 +63,47 @@ final class PostsListViewController: UIViewController {
             .drive(navigationItem.rx.title)
             .disposed(by: bag)
     }
+}
+
+extension PostsListViewController {
     
-    @objc func addNewPost() {
+    func makeAddBarButton() -> UIBarButtonItem {
+        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
+        addBarButton.tintColor = UIColor.label
+        return addBarButton
+    }
+    
+    @objc private func addNewPost() {
+        let (alertController, alertAction) = makeCustomAlert()
+        alertController.addAction(alertAction)
         
+        present(alertController, animated: true)
+    }
+    
+    private func makeCustomAlert() -> (alertController: UIAlertController, alertAction: UIAlertAction) {
+        
+        var nameTextField = UITextField()
+        var descriptionTextField = UITextField()
+        
+        let alert = UIAlertController(title: "Create New Post", message: "", preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "Create", style: .default) { [weak self] actions in
+            guard let self, let namePost = nameTextField.text, let desctiptionPost = descriptionTextField.text,!desctiptionPost.isEmpty, !namePost.isEmpty else { return }
+
+            let newPost = PostModel(id: tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) ?? 0, name: namePost, description: desctiptionPost)
+            self.viewModel.addNewPost(using: newPost)
+        }
+        
+        alert.addTextField() { alertTextField in
+            alertTextField.placeholder = "New Post"
+            nameTextField = alertTextField
+        }
+        
+        alert.addTextField() { alertTextField in
+            alertTextField.placeholder = "Description"
+            descriptionTextField = alertTextField
+        }
+        
+        return (alert, action)
     }
 }
