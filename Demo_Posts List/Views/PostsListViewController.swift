@@ -9,10 +9,15 @@ import UIKit
 
 final class PostsListViewController: UIViewController {
     
+    var viewModel: PostsListViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+        
+        viewModel = PostsListViewModel()
+        viewModel.fetchAllPosts()
     }
     
     private func configureUI() {
