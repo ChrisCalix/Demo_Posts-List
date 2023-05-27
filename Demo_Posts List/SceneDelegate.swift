@@ -18,7 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else { return }
         
         let navigationController = UINavigationController(rootViewController: view)
+        let navigationBar = navigationController.navigationBar
+        let appearance = UINavigationBarAppearance()
         let window = UIWindow(windowScene: windowScene)
+        
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = UIColor.tertiarySystemBackground
+        appearance.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28),
+            NSAttributedString.Key.foregroundColor: UIColor.tertiaryLabel
+        ]
+        navigationBar.standardAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
+        navigationBar.isTranslucent = false
+        
         window.rootViewController = navigationController
         
         self.window = window
