@@ -12,12 +12,13 @@ import RxDataSources
 
 final class PostsListViewController: UIViewController {
     
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var emptyImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: PostTableViewCell.identifier, bundle: nil ), forCellReuseIdentifier: PostTableViewCell.identifier)
         }
     }
-    @IBOutlet weak var searchTextField: UITextField!
     
     private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<PostsItemSection> { dataSource, tableView, indexPath, item in
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
@@ -65,6 +66,12 @@ final class PostsListViewController: UIViewController {
             .drive(navigationItem.rx.title)
             .disposed(by: bag)
         
+        viewModel.output.sections.map({ posts -> Bool in
+            posts[0].items.count != 0
+        })
+        .drive(emptyImageView.rx.isHidden)
+        .disposed(by: bag)
+        
         tableView
             .rx
             .itemDeleted
@@ -79,7 +86,7 @@ final class PostsListViewController: UIViewController {
         var nameTextField = UITextField()
         var descriptionTextField = UITextField()
         
-        let alert = UIAlertController(title: "Create New Post", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "New Post", message: "", preferredStyle: .alert)
 
         let action = UIAlertAction(title: "Create", style: .default) { [weak self] actions in
             guard let self else { return }
