@@ -16,6 +16,11 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
         expect(sut, toCompleteWith: .failure(.notFound))
     }
     
+    func test_load_deliversInvalidDataFromFileNameWithInvalidJSON() {
+        let (sut, _) = makeSUT(fileName: "InvalidJSON")
+        expect(sut, toCompleteWith: .failure(.invalidData))
+    }
+    
 //    MARK: Helpers
     func makeSUT(fileName: String = "PostsList.json",
                          file: StaticString = #filePath,
