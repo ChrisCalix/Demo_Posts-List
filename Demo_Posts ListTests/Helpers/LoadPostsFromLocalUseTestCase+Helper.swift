@@ -25,11 +25,12 @@ extension LoadPostsFromLocalUseTestCase {
     func makePost() -> (model: PostModel, json: [String: Any]) {
         let item = PostModel(name: "name", description: "description")
         
-        let json = [
-            "name": item.name,
-            "description": item.description
-        ].compactMapValues{ $0 }
+        let dictionary: [String : Any] = [
+                "name": item.name,
+                "description": item.description
+            ]
         
+        let json = dictionary.compactMapValues { $0 }
         return (item, json)
     }
     

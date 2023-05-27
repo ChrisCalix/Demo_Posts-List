@@ -1,22 +1,22 @@
 [
      {
-         "name": "POST 1",
+         "name": "Good Morning World!",
          "description":"Hey! What's up!'"
      },
      {
-         "name": "POST 2",
+         "name": "What am I doing?",
          "description":"Watching a movie"
      },
      {
-         "name": "POST 3",
+         "name": "How can I help you?",
          "description":"Let me refactor this."
      },
      {
-         "name": "POST 4",
+         "name": "Introduce",
          "description":"Tell me more about yourself"
      },
      {
-         "name": "POST 5",
+         "name": "Continue learning!!",
          "description":"You are doing pretty well"
      }
  ]

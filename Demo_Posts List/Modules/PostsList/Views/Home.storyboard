@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Posts List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PostsListViewController" id="Y6W-OH-hqX" customClass="PostsListViewController" customModule="Demo_Posts_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnO-ra-kzN">
+                                <rect key="frame" x="0.0" y="59" width="393" height="74"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search by name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MeB-3p-5Id">
+                                        <rect key="frame" x="20" y="20" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MeB-3p-5Id" secondAttribute="trailing" constant="20" id="89k-hz-vhf"/>
+                                    <constraint firstItem="MeB-3p-5Id" firstAttribute="top" secondItem="GnO-ra-kzN" secondAttribute="top" constant="20" id="PFM-1i-pLY"/>
+                                    <constraint firstAttribute="bottom" secondItem="MeB-3p-5Id" secondAttribute="bottom" constant="20" id="cqi-rO-cez"/>
+                                    <constraint firstItem="MeB-3p-5Id" firstAttribute="leading" secondItem="GnO-ra-kzN" secondAttribute="leading" constant="20" id="oo9-nq-GtM"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JOW-1r-bFI">
+                                <rect key="frame" x="4" y="133" width="385" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-QI-qHb">
+                                <rect key="frame" x="46.666666666666657" y="233" width="300" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="zbr-2j-GND"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g5Q-QI-qHb" firstAttribute="top" secondItem="GnO-ra-kzN" secondAttribute="bottom" constant="100" id="3yO-U3-zMN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JOW-1r-bFI" secondAttribute="trailing" constant="4" id="4t0-h9-lcS"/>
+                            <constraint firstItem="JOW-1r-bFI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="4" id="7Se-8h-kjz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JOW-1r-bFI" secondAttribute="bottom" id="LlH-gN-5BQ"/>
+                            <constraint firstItem="GnO-ra-kzN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Uby-oj-Za4"/>
+                            <constraint firstItem="g5Q-QI-qHb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kox-3P-AGr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GnO-ra-kzN" secondAttribute="trailing" id="qq7-W3-12Y"/>
+                            <constraint firstItem="GnO-ra-kzN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zUY-IL-Z27"/>
+                            <constraint firstItem="JOW-1r-bFI" firstAttribute="top" secondItem="GnO-ra-kzN" secondAttribute="bottom" id="zrG-le-A7p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emptyImageView" destination="g5Q-QI-qHb" id="MG1-Wd-y0o"/>
+                        <outlet property="searchTextField" destination="MeB-3p-5Id" id="ixT-07-5V5"/>
+                        <outlet property="tableView" destination="JOW-1r-bFI" id="dsL-gv-zHN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="notFound" width="300" height="189"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
