@@ -10,4 +10,8 @@ import Foundation
 struct PostModel: Decodable, Equatable {
     let name: String
     let description: String
+    
+    static func withEmptyMessage() -> PostModel {
+        PostModel(name: "The List is Empty", description: "")
+    }
 }

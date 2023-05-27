@@ -158,23 +158,49 @@
 			path = JSONFiles;
 			sourceTree = "<group>";
 		};
-		C368851A2A21AE4C00BFF6B0 /* Cells */ = {
+		C36885282A21CF8F00BFF6B0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C368852A2A21CFC300BFF6B0 /* PostCell */,
+				C36885292A21CFB300BFF6B0 /* PostsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C36885292A21CFB300BFF6B0 /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				C36E706C2A2139D800F6188C /* ViewModels */,
+				C36E706B2A2139D500F6188C /* Views */,
+				C36E706D2A2139DD00F6188C /* Models */,
+			);
+			path = PostsList;
+			sourceTree = "<group>";
+		};
+		C368852A2A21CFC300BFF6B0 /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				C368852C2A21CFEA00BFF6B0 /* ViewModels */,
+				C368852B2A21CFD000BFF6B0 /* Views */,
+			);
+			path = PostCell;
+			sourceTree = "<group>";
+		};
+		C368852B2A21CFD000BFF6B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C368851B2A21AE6D00BFF6B0 /* PostTableViewCell.swift */,
 				C368851C2A21AE6D00BFF6B0 /* PostTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		C36885212A21C4A900BFF6B0 /* PostsList */ = {
+		C368852C2A21CFEA00BFF6B0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C36E70722A213A9400F6188C /* Home.storyboard */,
-				C36E70742A213AB000F6188C /* PostsListViewController.swift */,
-				C36885262A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift */,
+				C36885102A21ADF300BFF6B0 /* PostCellViewModel.swift */,
 			);
-			path = PostsList;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C36E704B2A2137C900F6188C = {
@@ -200,12 +226,10 @@
 		C36E70562A2137C900F6188C /* Demo_Posts List */ = {
 			isa = PBXGroup;
 			children = (
+				C36885282A21CF8F00BFF6B0 /* Modules */,
 				C36E70962A21486E00F6188C /* FeedFeature */,
 				C36E70912A2144A300F6188C /* Utils */,
 				C36E706F2A213A5500F6188C /* Extensions */,
-				C36E706D2A2139DD00F6188C /* Models */,
-				C36E706C2A2139D800F6188C /* ViewModels */,
-				C36E706B2A2139D500F6188C /* Views */,
 				C36E70572A2137C900F6188C /* AppDelegate.swift */,
 				C36E70592A2137C900F6188C /* SceneDelegate.swift */,
 				C36E70602A2137CB00F6188C /* Assets.xcassets */,
@@ -218,8 +242,9 @@
 		C36E706B2A2139D500F6188C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C36885212A21C4A900BFF6B0 /* PostsList */,
-				C368851A2A21AE4C00BFF6B0 /* Cells */,
+				C36E70722A213A9400F6188C /* Home.storyboard */,
+				C36E70742A213AB000F6188C /* PostsListViewController.swift */,
+				C36885262A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,7 +252,6 @@
 		C36E706C2A2139D800F6188C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C36885102A21ADF300BFF6B0 /* PostCellViewModel.swift */,
 				C33FB6292A21919D0025B725 /* PostsListViewModel.swift */,
 			);
 			path = ViewModels;
