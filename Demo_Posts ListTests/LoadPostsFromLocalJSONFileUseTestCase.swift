@@ -26,8 +26,17 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
         expect(sut, toCompleteWith: .success([]))
     }
     
+    func test_load_deliversSuccessWithItemsFromFileNameWithJSONItems() {
+        let (sut, _) = makeSUT()
+        
+        let item1 = makePosts(name: "nameTest", description: "Description")
+        let item2 = makePosts(name: "namingTest", description: "Description Advanced")
+        
+        expect(sut, toCompleteWith: .success([item1.model, item2.model]))
+    }
+    
 //    MARK: Helpers
-    func makeSUT(fileName: String = "PostsList.json",
+    func makeSUT(fileName: String = "PostsList",
                          file: StaticString = #filePath,
                          line: UInt = #line) -> (sut: LocalFeedLoader, reader: FileReader){
         let reader = JSONFileReader(bundle: Bundle(for: type(of: self)))
@@ -58,4 +67,17 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
         
         waitForExpectations(timeout: 0.1)
     }
+    
+    func makePosts(name: String, description: String) -> (model: FeedPost, json: [String: Any]) {
+            let item = FeedPost(name: name,
+                                description: description)
+            
+            let json = [
+                "name": item.name,
+                "description": item.description
+            ].compactMapValues { $0 }
+            
+            return (item, json)
+        }
+
 }
