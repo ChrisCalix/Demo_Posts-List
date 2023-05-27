@@ -12,6 +12,7 @@
 		C33FB61C2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB61B2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift */; };
 		C33FB61E2A217A320025B725 /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33FB61D2A217A320025B725 /* JSONFileReader.swift */; };
 		C33FB6212A218B1F0025B725 /* InvalidJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = C33FB6202A218B1F0025B725 /* InvalidJSON.json */; };
+		C33FB6232A218BFF0025B725 /* EmptyPosts.json in Resources */ = {isa = PBXBuildFile; fileRef = C33FB6222A218BFF0025B725 /* EmptyPosts.json */; };
 		C36E70582A2137C900F6188C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70572A2137C900F6188C /* AppDelegate.swift */; };
 		C36E705A2A2137C900F6188C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70592A2137C900F6188C /* SceneDelegate.swift */; };
 		C36E70612A2137CB00F6188C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36E70602A2137CB00F6188C /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		C33FB61B2A2179500025B725 /* LoadPostsFromLocalJSONFileUseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPostsFromLocalJSONFileUseTestCase.swift; sourceTree = "<group>"; };
 		C33FB61D2A217A320025B725 /* JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
 		C33FB6202A218B1F0025B725 /* InvalidJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidJSON.json; sourceTree = "<group>"; };
+		C33FB6222A218BFF0025B725 /* EmptyPosts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyPosts.json; sourceTree = "<group>"; };
 		C36E70542A2137C900F6188C /* Demo_Posts List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo_Posts List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E70572A2137C900F6188C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C36E70592A2137C900F6188C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C33FB6202A218B1F0025B725 /* InvalidJSON.json */,
+				C33FB6222A218BFF0025B725 /* EmptyPosts.json */,
 			);
 			path = JSONFileTest;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33FB6232A218BFF0025B725 /* EmptyPosts.json in Resources */,
 				C33FB6212A218B1F0025B725 /* InvalidJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
