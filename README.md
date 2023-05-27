@@ -1,6 +1,30 @@
 # Demo_Posts-List
 Demo App to list Post from a JSON file (simulating request) Use a mock for this purpose. Implementation using RxSwift, in MVVM pattern. 
 
+Clone the respository following (You can follow the Github) or make a Fork from the branch-master
+
+<img width="119" alt="Screenshot 2023-05-27 at 04 21 24" src="https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/8a5b717b-af74-407f-91d3-bebafbf82ce3">
+
+Open the terminal and search the path where you clone the repository and use the comand "pod install" (Note- Previously you must get installed CocoaPods in your mac)
+
+<img width="567" alt="Screenshot 2023-05-27 at 03 24 13" src="https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/250b70e7-a05b-4531-9d13-8d8f8c32bedd">
+
+When the pods are correctly installed you can see New Files please open the file with .xcworkspace extension "Demo_Posts List.xcworkspace" 
+
+<img width="239" alt="Screenshot 2023-05-27 at 03 24 19" src="https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/20f804b4-acb1-4f97-824d-2e70d7658ce5">
+
+Inside the XCode, make secure than You are in the branch Master and wait than all the process has finished so Choose iPhone 14 Pro as Emulator to compile after that you can Run the App 
+
+<img width="1129" alt="Screenshot 2023-05-27 at 03 28 09" src="https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/399d7cc9-fd13-4db2-a546-0f7617133f2d">
+
+Don't forget you can run the test too with shortcut "COMMAND + U"
+
+<img width="917" alt="Screenshot 2023-05-27 at 04 18 58" src="https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/888183bd-5d30-43d5-8faa-e8b8d08bd326">
+
+<img width="191" alt="Screenshot 2023-05-27 at 04 18 47" src="https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/c0788ae3-818f-4924-9ff1-7f63fc54417f">
+
+When the app is running Now we can see the behavior with the follow functionality described bellow.
+
 Show Posts List: 
 
 When the app appear, you can watch a fake requested of List of Posts From a File 
