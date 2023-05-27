@@ -9,6 +9,9 @@ import UIKit
 
 final class PostsListViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView! 
+    @IBOutlet weak var searchTextField: UITextField!
+    
     var viewModel: PostsListViewModel!
     
     override func viewDidLoad() {
@@ -21,6 +24,6 @@ final class PostsListViewController: UIViewController {
     }
     
     private func configureUI() {
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
     }
 }
