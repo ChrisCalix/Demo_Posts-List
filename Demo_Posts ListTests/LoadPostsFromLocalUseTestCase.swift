@@ -17,7 +17,7 @@ final class LoadPostsFromLocalUseTestCase: XCTestCase {
     }
     
     func test_load_twiceRequestDataFromFileTwice() {
-        let fileName = "PostsList.json"
+        let fileName = Constants.JSONFile.postsList.rawValue
         let (sut, reader) = makeSUT(fileName: fileName)
         
         sut.load { _ in }

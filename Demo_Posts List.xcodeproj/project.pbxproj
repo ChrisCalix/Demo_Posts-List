@@ -22,7 +22,7 @@
 		C36E70712A213A6600F6188C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70702A213A6500F6188C /* UIViewController+Extension.swift */; };
 		C36E70732A213A9400F6188C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36E70722A213A9400F6188C /* Home.storyboard */; };
 		C36E70752A213AB000F6188C /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70742A213AB000F6188C /* PostsListViewController.swift */; };
-		C36E70772A213B5800F6188C /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70762A213B5800F6188C /* Contants.swift */; };
+		C36E70772A213B5800F6188C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70762A213B5800F6188C /* Constants.swift */; };
 		C36E70872A213F6B00F6188C /* LoadPostsFromLocalUseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70862A213F6B00F6188C /* LoadPostsFromLocalUseTestCase.swift */; };
 		C36E708A2A213FEF00F6188C /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70892A213FEF00F6188C /* FileReader.swift */; };
 		C36E708C2A2140D800F6188C /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E708B2A2140D800F6188C /* FeedLoader.swift */; };
@@ -60,7 +60,7 @@
 		C36E70702A213A6500F6188C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C36E70722A213A9400F6188C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C36E70742A213AB000F6188C /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
-		C36E70762A213B5800F6188C /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		C36E70762A213B5800F6188C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C36E707D2A213EF500F6188C /* Demo_Posts ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo_Posts ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E70862A213F6B00F6188C /* LoadPostsFromLocalUseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPostsFromLocalUseTestCase.swift; sourceTree = "<group>"; };
 		C36E70892A213FEF00F6188C /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C36E70702A213A6500F6188C /* UIViewController+Extension.swift */,
-				C36E70762A213B5800F6188C /* Contants.swift */,
+				C36E70762A213B5800F6188C /* Constants.swift */,
 				C36E70942A21459400F6188C /* LocalFeedLoader+Error+Extension.swift */,
 			);
 			path = Extensions;
@@ -339,7 +339,7 @@
 				C36E70982A21487A00F6188C /* FeedMapper.swift in Sources */,
 				C36E70712A213A6600F6188C /* UIViewController+Extension.swift in Sources */,
 				C33FB61E2A217A320025B725 /* JSONFileReader.swift in Sources */,
-				C36E70772A213B5800F6188C /* Contants.swift in Sources */,
+				C36E70772A213B5800F6188C /* Constants.swift in Sources */,
 				C36E70582A2137C900F6188C /* AppDelegate.swift in Sources */,
 				C36E705A2A2137C900F6188C /* SceneDelegate.swift in Sources */,
 			);

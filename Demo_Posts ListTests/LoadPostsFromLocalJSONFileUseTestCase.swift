@@ -36,7 +36,7 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
     }
     
 //    MARK: Helpers
-    func makeSUT(fileName: String = "PostsList",
+    func makeSUT(fileName: String = Constants.JSONFile.postsList.rawValue,
                          file: StaticString = #filePath,
                          line: UInt = #line) -> (sut: LocalFeedLoader, reader: FileReader){
         let reader = JSONFileReader(bundle: Bundle(for: type(of: self)))
