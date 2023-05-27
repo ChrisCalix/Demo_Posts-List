@@ -23,10 +23,9 @@ extension LoadPostsFromLocalUseTestCase {
     }
     
     func makePost() -> (model: PostModel, json: [String: Any]) {
-        let item = PostModel(id: 1, name: "name", description: "description")
+        let item = PostModel(name: "name", description: "description")
         
         let dictionary: [String : Any] = [
-                "id": item.id,
                 "name": item.name,
                 "description": item.description
             ]

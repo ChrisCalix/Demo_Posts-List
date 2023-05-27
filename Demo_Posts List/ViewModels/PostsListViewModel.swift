@@ -30,7 +30,8 @@ protocol PostsListViewPresentable {
     var output: Self.Output { get }
     
     func fetchAllPosts()
-    func addNewPost(using newPost: PostModel)
+    func addNewPost(using newPost: PostModel, completion: @escaping (Bool) -> Void)
+    func removePost(at indexPath: IndexPath?)
 }
 
 struct PostsListViewModel: PostsListViewPresentable {
@@ -63,17 +64,32 @@ struct PostsListViewModel: PostsListViewPresentable {
     
     private func addNewPosts(from posts: [PostModel]) {
         posts.forEach { post in
-            self.addNewPost(using: post)
+            self.addNewPost(using: post){ _ in }
         }
     }
     
-    func addNewPost(using newPost: PostModel) {
+    func addNewPost(using newPost: PostModel, completion: @escaping (Bool) -> Void) {
         lock.lock();
         defer { lock.unlock() }
         var posts = state.posts.value
+        guard !posts.contains(newPost) else {
+            completion(false)
+            return
+        }
         posts.append(newPost)
         state.posts.accept(posts)
+        completion(true)
     }
+    
+    func removePost(at indexPath: IndexPath?) {
+        lock.lock(); defer { lock.unlock() }
+        var items = state.posts.value
+        guard let indexPath else { return }
+        items.remove(at: indexPath.row)
+        state.posts.accept(items)
+    }
+    
+    
 }
 
 private extension PostsListViewModel {

@@ -8,15 +8,15 @@
 import RxDataSources
 
 struct PostCellViewModel: IdentifiableType, Equatable {
-    typealias Identity = Int
+    typealias Identity = String
     
-    var identity: Int
+    var identity: String
     let title: String
     let desctiption: String
     
     init(from post: PostModel) {
         self.title = post.name
         self.desctiption = post.description
-        self.identity = post.id
+        self.identity = title + desctiption
     }
 }

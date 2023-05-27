@@ -69,12 +69,10 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
     }
     
     func makePosts(id: Int, name: String, description: String) -> (model: PostModel, json: [String: Any]) {
-        let item = PostModel(id: id,
-                             name: name,
-                            description: description)
+        let item = PostModel(name: name,
+                             description: description)
             
         let dictionary: [String : Any] = [
-                "id": item.id,
                 "name": item.name,
                 "description": item.description
             ]

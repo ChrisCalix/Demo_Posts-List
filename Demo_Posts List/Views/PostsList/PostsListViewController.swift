@@ -40,8 +40,10 @@ final class PostsListViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
-        
         navigationItem.setRightBarButton(makeAddBarButton(), animated: true)
+        dataSource.canEditRowAtIndexPath = { dataSource, indexPath in
+          return true
+        }
     }
     
     private func configureViewModel() {
@@ -61,6 +63,14 @@ final class PostsListViewController: UIViewController {
         
         viewModel.output.title
             .drive(navigationItem.rx.title)
+            .disposed(by: bag)
+        
+        tableView
+            .rx
+            .itemDeleted
+            .subscribe(onNext: { indexPath in
+                self.viewModel.removePost(at: indexPath)
+            })
             .disposed(by: bag)
     }
 }
@@ -89,10 +99,19 @@ extension PostsListViewController {
         let alert = UIAlertController(title: "Create New Post", message: "", preferredStyle: .alert)
 
         let action = UIAlertAction(title: "Create", style: .default) { [weak self] actions in
-            guard let self, let namePost = nameTextField.text, let desctiptionPost = descriptionTextField.text,!desctiptionPost.isEmpty, !namePost.isEmpty else { return }
+            guard let self else { return }
+            
+            guard let namePost = self.validateAndReturnTextFieldValue(textField: nameTextField, messageForEmptyText: "We can't add this post, because you don't add any name") else { return }
+            
+            guard let descriptionPost = self.validateAndReturnTextFieldValue(textField: descriptionTextField, messageForEmptyText: "We can't add this post, because you don't add any name or description") else { return}
 
-            let newPost = PostModel(id: tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) ?? 0, name: namePost, description: desctiptionPost)
-            viewModel.addNewPost(using: newPost)
+            let newPost = PostModel(name: namePost, description: descriptionPost)
+            viewModel.addNewPost(using: newPost){ [weak self] isAdded in
+                guard let self else { return }
+                if !isAdded {
+                    presentAlertAdvice(with: "We can't add this post, because already exist other with the same name and description")
+                }
+            }
         }
         
         alert.addTextField() { alertTextField in
@@ -106,5 +125,27 @@ extension PostsListViewController {
         }
         
         return (alert, action)
+    }
+    
+    func makeCustomAlertAdvice(title: String = "Operation Failed", message: String) -> UIAlertController {
+        let alertAdvice = UIAlertController(title: "Operation Failed", message: "We can't add this post, because already exist other with the same name and description", preferredStyle: .alert)
+        alertAdvice.addAction(UIAlertAction(title: "Agree", style: .destructive))
+        return alertAdvice
+    }
+    
+    func validateAndReturnTextFieldValue(textField: UITextField, messageForEmptyText: String) -> String? {
+        guard let namePost = textField.text,
+              !namePost.isEmpty
+        else {
+            presentAlertAdvice(with: messageForEmptyText)
+            return nil
+        }
+        return namePost
+    }
+    
+    func presentAlertAdvice(with message: String) {
+        let alertAdvice = self.makeCustomAlertAdvice(message: message)
+        
+        self.present(alertAdvice, animated: true)
     }
 }
