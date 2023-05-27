@@ -21,6 +21,7 @@
 		C368851D2A21AE6D00BFF6B0 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368851B2A21AE6D00BFF6B0 /* PostTableViewCell.swift */; };
 		C368851E2A21AE6D00BFF6B0 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C368851C2A21AE6D00BFF6B0 /* PostTableViewCell.xib */; };
 		C36885202A21B14500BFF6B0 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368851F2A21B14500BFF6B0 /* UITableViewCell+Extension.swift */; };
+		C36885272A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36885262A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift */; };
 		C36E70582A2137C900F6188C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70572A2137C900F6188C /* AppDelegate.swift */; };
 		C36E705A2A2137C900F6188C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E70592A2137C900F6188C /* SceneDelegate.swift */; };
 		C36E70612A2137CB00F6188C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36E70602A2137CB00F6188C /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		C368851B2A21AE6D00BFF6B0 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		C368851C2A21AE6D00BFF6B0 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		C368851F2A21B14500BFF6B0 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		C36885262A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostsListViewController+AddButton+Actions.swift"; sourceTree = "<group>"; };
 		C36E70542A2137C900F6188C /* Demo_Posts List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo_Posts List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E70572A2137C900F6188C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C36E70592A2137C900F6188C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				C36E70722A213A9400F6188C /* Home.storyboard */,
 				C36E70742A213AB000F6188C /* PostsListViewController.swift */,
+				C36885262A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift */,
 			);
 			path = PostsList;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				C36E70582A2137C900F6188C /* AppDelegate.swift in Sources */,
 				C36885112A21ADF300BFF6B0 /* PostCellViewModel.swift in Sources */,
 				C36E705A2A2137C900F6188C /* SceneDelegate.swift in Sources */,
+				C36885272A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift in Sources */,
 				C36885202A21B14500BFF6B0 /* UITableViewCell+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
