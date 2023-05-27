@@ -29,8 +29,8 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
     func test_load_deliversSuccessWithItemsFromFileNameWithJSONItems() {
         let (sut, _) = makeSUT()
         
-        let item1 = makePosts(name: "nameTest", description: "Description")
-        let item2 = makePosts(name: "namingTest", description: "Description Advanced")
+        let item1 = makePosts(id: 1, name: "nameTest", description: "Description")
+        let item2 = makePosts(id: 2, name: "namingTest", description: "Description Advanced")
         
         expect(sut, toCompleteWith: .success([item1.model, item2.model]))
     }
@@ -68,16 +68,20 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
         waitForExpectations(timeout: 0.1)
     }
     
-    func makePosts(name: String, description: String) -> (model: PostModel, json: [String: Any]) {
-            let item = PostModel(name: name,
-                                description: description)
+    func makePosts(id: Int, name: String, description: String) -> (model: PostModel, json: [String: Any]) {
+        let item = PostModel(id: id,
+                             name: name,
+                            description: description)
             
-            let json = [
+        let dictionary: [String : Any] = [
+                "id": item.id,
                 "name": item.name,
                 "description": item.description
-            ].compactMapValues { $0 }
+            ]
+        
+        let json = dictionary.compactMapValues { $0 } 
             
-            return (item, json)
+        return (item, json)
         }
 
 }
