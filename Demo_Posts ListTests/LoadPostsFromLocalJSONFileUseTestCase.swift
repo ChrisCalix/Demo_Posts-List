@@ -45,7 +45,7 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
     }
     
     func expect(_ sut: LocalFeedLoader,
-                          toCompleteWith expectedResult: Result<[FeedPost], LocalFeedLoader.Error>,
+                          toCompleteWith expectedResult: Result<[PostModel], LocalFeedLoader.Error>,
                           file: StaticString = #filePath,
                           line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
@@ -68,8 +68,8 @@ final class LoadPostsFromLocalJSONFileUseTestCase: XCTestCase {
         waitForExpectations(timeout: 0.1)
     }
     
-    func makePosts(name: String, description: String) -> (model: FeedPost, json: [String: Any]) {
-            let item = FeedPost(name: name,
+    func makePosts(name: String, description: String) -> (model: PostModel, json: [String: Any]) {
+            let item = PostModel(name: name,
                                 description: description)
             
             let json = [

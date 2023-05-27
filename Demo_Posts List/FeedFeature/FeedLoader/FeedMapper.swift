@@ -9,7 +9,7 @@ import Foundation
 
 enum FeedMapper {
     static func validateAndMap(_ data: Data) -> LocalFeedLoader.FeedResult {
-        guard let root = try? JSONDecoder().decode([FeedPost].self, from: data) else {
+        guard let root = try? JSONDecoder().decode([PostModel].self, from: data) else {
             return .failure(LocalFeedLoader.Error.invalidData)
         }
         return .success(root)

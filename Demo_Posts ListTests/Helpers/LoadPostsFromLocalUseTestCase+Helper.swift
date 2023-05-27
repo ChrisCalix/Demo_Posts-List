@@ -22,8 +22,8 @@ extension LoadPostsFromLocalUseTestCase {
         return try! JSONSerialization.data(withJSONObject: items)
     }
     
-    func makePost() -> (model: FeedPost, json: [String: Any]) {
-        let item = FeedPost(name: "name", description: "description")
+    func makePost() -> (model: PostModel, json: [String: Any]) {
+        let item = PostModel(name: "name", description: "description")
         
         let json = [
             "name": item.name,
@@ -34,7 +34,7 @@ extension LoadPostsFromLocalUseTestCase {
     }
     
     func expect(_ sut: LocalFeedLoader,
-                          toCompleteWith expectedResult: Result<[FeedPost], LocalFeedLoader.Error>,
+                          toCompleteWith expectedResult: Result<[PostModel], LocalFeedLoader.Error>,
                           when action: ()-> Void,
                           file: StaticString = #filePath,
                           line: UInt = #line) {
