@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "D1F005D7-0329-4C74-8D5E-F181FAD5A685",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Demo_Posts List.xcodeproj",
+        "identifier" : "C36E707C2A213EF500F6188C",
+        "name" : "Demo_Posts ListTests"
+      }
+    }
+  ],
+  "version" : 1
+}

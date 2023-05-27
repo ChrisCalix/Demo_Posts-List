@@ -86,6 +86,7 @@
 		C36E708F2A21414900F6188C /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		C36E70942A21459400F6188C /* LocalFeedLoader+Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalFeedLoader+Error+Extension.swift"; sourceTree = "<group>"; };
 		C36E70972A21487A00F6188C /* FeedMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMapper.swift; sourceTree = "<group>"; };
+		C3D391192A21F2510085378E /* DemoPostsListTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoPostsListTest.xctestplan; sourceTree = "<group>"; };
 		D5F02DD9A83D210A4AB3525A /* Pods-Demo_Posts ListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Posts ListTests.debug.xcconfig"; path = "Target Support Files/Pods-Demo_Posts ListTests/Pods-Demo_Posts ListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E946C736F89422BF167438D8 /* Pods-Demo_Posts List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Posts List.release.xcconfig"; path = "Target Support Files/Pods-Demo_Posts List/Pods-Demo_Posts List.release.xcconfig"; sourceTree = "<group>"; };
 		FA04C1BDD1C6AC422D02679A /* Pods_Demo_Posts_ListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Posts_ListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +207,7 @@
 		C36E704B2A2137C900F6188C = {
 			isa = PBXGroup;
 			children = (
+				C3D391192A21F2510085378E /* DemoPostsListTest.xctestplan */,
 				C36E70562A2137C900F6188C /* Demo_Posts List */,
 				C36E707E2A213EF600F6188C /* Demo_Posts ListTests */,
 				C36E70552A2137C900F6188C /* Products */,

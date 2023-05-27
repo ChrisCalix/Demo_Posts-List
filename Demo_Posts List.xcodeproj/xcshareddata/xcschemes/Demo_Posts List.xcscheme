@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../Demo_Posts List.xctestplan"
+            reference = "container:DemoPostsListTest.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
