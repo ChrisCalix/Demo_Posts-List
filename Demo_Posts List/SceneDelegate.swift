@@ -28,8 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appearance.configureWithDefaultBackground()
         appearance.backgroundColor = UIColor.tertiarySystemBackground
         appearance.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28),
-            NSAttributedString.Key.foregroundColor: UIColor.tertiaryLabel
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .bold),
+            NSAttributedString.Key.foregroundColor: UIColor.label,
+            
         ]
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance

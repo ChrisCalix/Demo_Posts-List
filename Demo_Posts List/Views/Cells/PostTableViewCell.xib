@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l5A-2b-jgD">
-                        <rect key="frame" x="20" y="7.6666666666666679" width="280" height="54.666666666666657"/>
+                        <rect key="frame" x="20" y="12.333333333333332" width="280" height="45.333333333333343"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-rf-oDx">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="26.333333333333332"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="390-6g-3z3">
-                                <rect key="frame" x="0.0" y="34.333333333333336" width="280" height="20.333333333333336"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="28.333333333333329" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

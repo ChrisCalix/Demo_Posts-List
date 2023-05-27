@@ -17,7 +17,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     private func configureUI() {
-        contentView.backgroundColor = .secondarySystemBackground
+        contentView.backgroundColor = .systemBackground
     }
 
     func setup(using viewModel: PostCellViewModel) {
