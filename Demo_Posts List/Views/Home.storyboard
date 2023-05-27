@@ -29,7 +29,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MeB-3p-5Id" secondAttribute="trailing" constant="20" id="89k-hz-vhf"/>
                                     <constraint firstItem="MeB-3p-5Id" firstAttribute="top" secondItem="GnO-ra-kzN" secondAttribute="top" constant="20" id="PFM-1i-pLY"/>
@@ -62,6 +62,9 @@
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>

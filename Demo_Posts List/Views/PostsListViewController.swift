@@ -9,7 +9,7 @@ import UIKit
 
 final class PostsListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView! 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     
     var viewModel: PostsListViewModel!
@@ -25,5 +25,12 @@ final class PostsListViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
+        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
+        addBarButton.tintColor = UIColor.label
+        navigationItem.setRightBarButton(addBarButton, animated: true)
+    }
+    
+    @objc func addNewPost() {
+        
     }
 }
