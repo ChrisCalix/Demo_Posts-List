@@ -1,7 +1,7 @@
 # Demo_Posts-List
 Demo App to list Post from a JSON file (simulating request) Use a mock for this purpose. Implementation using RxSwift, in MVVM pattern. 
 
-Show Posts List:
+Show Posts List: 
 
 When the app appear, you can watch a fake requested of List of Posts From a File 
 
