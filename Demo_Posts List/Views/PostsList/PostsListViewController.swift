@@ -65,9 +65,10 @@ final class PostsListViewController: UIViewController {
     }
 }
 
+//MARK: Add Button create and Actions
 extension PostsListViewController {
     
-    func makeAddBarButton() -> UIBarButtonItem {
+    private func makeAddBarButton() -> UIBarButtonItem {
         let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPost))
         addBarButton.tintColor = UIColor.label
         return addBarButton
@@ -91,7 +92,7 @@ extension PostsListViewController {
             guard let self, let namePost = nameTextField.text, let desctiptionPost = descriptionTextField.text,!desctiptionPost.isEmpty, !namePost.isEmpty else { return }
 
             let newPost = PostModel(id: tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) ?? 0, name: namePost, description: desctiptionPost)
-            self.viewModel.addNewPost(using: newPost)
+            viewModel.addNewPost(using: newPost)
         }
         
         alert.addTextField() { alertTextField in

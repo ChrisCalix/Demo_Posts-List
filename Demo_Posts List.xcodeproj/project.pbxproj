@@ -165,6 +165,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		C36885212A21C4A900BFF6B0 /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				C36E70722A213A9400F6188C /* Home.storyboard */,
+				C36E70742A213AB000F6188C /* PostsListViewController.swift */,
+			);
+			path = PostsList;
+			sourceTree = "<group>";
+		};
 		C36E704B2A2137C900F6188C = {
 			isa = PBXGroup;
 			children = (
@@ -206,9 +215,8 @@
 		C36E706B2A2139D500F6188C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C36885212A21C4A900BFF6B0 /* PostsList */,
 				C368851A2A21AE4C00BFF6B0 /* Cells */,
-				C36E70722A213A9400F6188C /* Home.storyboard */,
-				C36E70742A213AB000F6188C /* PostsListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
