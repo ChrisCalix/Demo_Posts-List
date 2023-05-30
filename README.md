@@ -68,3 +68,15 @@ Introduce a letter or word to search in the list in the textField on the top of 
 If you filter by words than doesn't exist in the list or you removed all the posts then the app will show you an empty image state
 
 ![Simulator Screenshot - iPhone 14 Pro - 2023-05-27 at 03 02 18](https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/f4ed44cb-4c5b-4023-a2ec-01f963addf77)
+
+You can use this app in night Mode: 
+
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 12 54 06](https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/8dec441b-d910-4b7e-a129-ad64dea498d5)
+
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 12 54 11](https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/44c93726-3759-403d-8b90-88a56a9fb456)
+
+And in landscape Mode:
+
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 12 54 34](https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/1474b250-1a1e-4676-bf20-3f899eeb24a5)
+
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-30 at 12 56 21](https://github.com/ChrisCalix/Demo_Posts-List/assets/80593860/bdca6721-ae3a-4bdf-aba4-2a18bd264039)
