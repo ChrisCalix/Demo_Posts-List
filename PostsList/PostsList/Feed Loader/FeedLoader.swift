@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FeedLoader {
+public protocol FeedLoader {
     typealias FeedResult = Swift.Result<[PostModel], Swift.Error>
     
     func load(completion: @escaping (FeedResult) -> Void)

@@ -8,6 +8,11 @@
 import Foundation
 
 public struct PostModel: Decodable, Equatable {
-    let name: String
-    let description: String
+    public let name: String
+    public let description: String
+    
+    public init(name: String, description: String) {
+        self.name = name
+        self.description = description
+    }
 }

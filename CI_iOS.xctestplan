@@ -27,6 +27,13 @@
         "identifier" : "C36E707C2A213EF500F6188C",
         "name" : "DemoPostsListTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:PostsList\/PostsList.xcodeproj",
+        "identifier" : "C3C021DE2A5FC12D00DD2E2E",
+        "name" : "PostsListTests"
+      }
     }
   ],
   "version" : 1

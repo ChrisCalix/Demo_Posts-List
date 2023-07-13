@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import PostsList
 
 public final class PostsListViewController: UIViewController {
     

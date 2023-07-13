@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import RxRelay
 import RxDataSources
+import PostsList
 
 public typealias PostsItemSection = AnimatableSectionModel<Int, PostCellViewModel>
 

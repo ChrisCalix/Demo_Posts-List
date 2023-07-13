@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FileReader {
+public protocol FileReader {
     typealias Result = Swift.Result<Data, Error>
     
     func get(from fileName: String, completion: @escaping(FileReader.Result) -> Void)

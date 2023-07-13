@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct LocalFeedLoader: FeedLoader {
+public struct LocalFeedLoader: FeedLoader {
     
     private let fileName: String
     private let reader: FileReader
     
-    init(fileName: String, reader: FileReader) {
+    public init(fileName: String, reader: FileReader) {
         self.fileName = fileName
         self.reader = reader
     }
     
-    func load(completion: @escaping (FeedResult) -> Void) {
+    public func load(completion: @escaping (FeedResult) -> Void) {
         reader.get(from: fileName) { result in
             switch result {
             case let .failure(error):
