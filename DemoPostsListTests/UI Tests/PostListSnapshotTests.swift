@@ -15,6 +15,7 @@ class PostListSnapshotTests: XCTestCase {
         
         assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .light)), named: "POST_LIST_light")
         assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .dark)), named: "POST_LIST_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .light, contentSize: .extraExtraExtraLarge)), named: "POST_LIST_light_extraExtraExtraLarge")
     }
     // MARK: - Helpers
     
@@ -23,7 +24,6 @@ class PostListSnapshotTests: XCTestCase {
         controller.viewModelBuilder = {
             return PostsListViewModel(input: $0, dependencies: (title: "Post List", ()))
         }
-        controller.loadViewIfNeeded()
         return controller
     }
     

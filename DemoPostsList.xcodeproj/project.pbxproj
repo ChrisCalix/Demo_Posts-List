@@ -42,6 +42,7 @@
 		C3C021912A5FB18600DD2E2E /* UIViewConrtoller+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C021902A5FB18600DD2E2E /* UIViewConrtoller+Snapshot.swift */; };
 		C3C021942A5FB4DD00DD2E2E /* POST_LIST_light.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C021932A5FB4DD00DD2E2E /* POST_LIST_light.png */; };
 		C3C021962A5FB51E00DD2E2E /* POST_LIST_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C021952A5FB51E00DD2E2E /* POST_LIST_dark.png */; };
+		C3C021982A5FB78B00DD2E2E /* POST_LIST_light_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C021972A5FB78B00DD2E2E /* POST_LIST_light_extraExtraExtraLarge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		C3C021902A5FB18600DD2E2E /* UIViewConrtoller+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConrtoller+Snapshot.swift"; sourceTree = "<group>"; };
 		C3C021932A5FB4DD00DD2E2E /* POST_LIST_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POST_LIST_light.png; sourceTree = "<group>"; };
 		C3C021952A5FB51E00DD2E2E /* POST_LIST_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POST_LIST_dark.png; sourceTree = "<group>"; };
+		C3C021972A5FB78B00DD2E2E /* POST_LIST_light_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POST_LIST_light_extraExtraExtraLarge.png; sourceTree = "<group>"; };
 		D5F02DD9A83D210A4AB3525A /* Pods-Demo_Posts ListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Posts ListTests.debug.xcconfig"; path = "Target Support Files/Pods-Demo_Posts ListTests/Pods-Demo_Posts ListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E946C736F89422BF167438D8 /* Pods-Demo_Posts List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Posts List.release.xcconfig"; path = "Target Support Files/Pods-Demo_Posts List/Pods-Demo_Posts List.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -357,6 +359,7 @@
 		C3C021922A5FB4DD00DD2E2E /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
+				C3C021972A5FB78B00DD2E2E /* POST_LIST_light_extraExtraExtraLarge.png */,
 				C3C021952A5FB51E00DD2E2E /* POST_LIST_dark.png */,
 				C3C021932A5FB4DD00DD2E2E /* POST_LIST_light.png */,
 			);
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C021962A5FB51E00DD2E2E /* POST_LIST_dark.png in Resources */,
+				C3C021982A5FB78B00DD2E2E /* POST_LIST_light_extraExtraExtraLarge.png in Resources */,
 				C33FB6252A218D680025B725 /* PostsList.json in Resources */,
 				C33FB6232A218BFF0025B725 /* EmptyPosts.json in Resources */,
 				C3C021942A5FB4DD00DD2E2E /* POST_LIST_light.png in Resources */,
