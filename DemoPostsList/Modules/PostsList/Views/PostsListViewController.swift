@@ -96,7 +96,7 @@ final class PostsListViewController: UIViewController {
             guard let descriptionPost = self.validateAndReturnTextFieldValue(textField: descriptionTextField, messageForEmptyText: "We can't add this post, because you don't add any name or description") else { return}
 
             let newPost = PostModel(name: namePost, description: descriptionPost)
-            viewModel.addNewPost(using: newPost){ [weak self] isAdded in
+            self.viewModel.addNewPost(using: newPost){ [weak self] isAdded in
                 guard let self else { return }
                 if !isAdded {
                     self.presentAlertAdvice(with: "We can't add this post, because already exist other with the same name and description")
