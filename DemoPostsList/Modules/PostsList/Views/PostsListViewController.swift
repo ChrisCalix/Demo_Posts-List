@@ -99,7 +99,7 @@ final class PostsListViewController: UIViewController {
             viewModel.addNewPost(using: newPost){ [weak self] isAdded in
                 guard let self else { return }
                 if !isAdded {
-                    presentAlertAdvice(with: "We can't add this post, because already exist other with the same name and description")
+                    self.presentAlertAdvice(with: "We can't add this post, because already exist other with the same name and description")
                 }
             }
         }

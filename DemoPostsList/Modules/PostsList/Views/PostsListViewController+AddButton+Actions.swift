@@ -33,7 +33,7 @@ extension PostsListViewController {
         guard let namePost = textField.text,
               !namePost.isEmpty
         else {
-            presentAlertAdvice(with: messageForEmptyText)
+            self.presentAlertAdvice(with: messageForEmptyText)
             return nil
         }
         return namePost
