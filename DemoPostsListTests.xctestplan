@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "A2D4D524-ECC3-4613-ADC7-6CC249851F8D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:DemoPostsList.xcodeproj",
+          "identifier" : "C36E70532A2137C900F6188C",
+          "name" : "DemoPostsList"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DemoPostsList.xcodeproj",
+        "identifier" : "C36E707C2A213EF500F6188C",
+        "name" : "DemoPostsListTests"
+      }
+    }
+  ],
+  "version" : 1
+}

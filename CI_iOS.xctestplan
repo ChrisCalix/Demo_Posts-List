@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "7E439200-9F95-4609-B1C7-0DF2F2DB1E7E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:DemoPostsList.xcodeproj",
+          "identifier" : "C36E70532A2137C900F6188C",
+          "name" : "DemoPostsList"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DemoPostsList.xcodeproj",
+        "identifier" : "C36E707C2A213EF500F6188C",
+        "name" : "DemoPostsListTests"
+      }
+    }
+  ],
+  "version" : 1
+}
