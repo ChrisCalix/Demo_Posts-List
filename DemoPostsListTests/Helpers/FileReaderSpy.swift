@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Demo_Posts_List
+@testable import DemoPostsList
 
 final class FileReaderSpy: FileReader {
     
