@@ -15,6 +15,11 @@
           "containerPath" : "container:DemoPostsList.xcodeproj",
           "identifier" : "C36E70532A2137C900F6188C",
           "name" : "DemoPostsList"
+        },
+        {
+          "containerPath" : "container:PostsList\/PostsList.xcodeproj",
+          "identifier" : "C3C021D62A5FC12D00DD2E2E",
+          "name" : "PostsList"
         }
       ]
     },

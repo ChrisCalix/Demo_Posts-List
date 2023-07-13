@@ -24,6 +24,7 @@ class PostListSnapshotTests: XCTestCase {
         controller.viewModelBuilder = {
             return PostsListViewModel(input: $0, dependencies: (title: "Post List", ()))
         }
+        controller.enforceLayoutCicle()
         return controller
     }
     
@@ -75,4 +76,6 @@ class PostListSnapshotTests: XCTestCase {
         
         return data
     }
+    
+    
 }
