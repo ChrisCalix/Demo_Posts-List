@@ -15,6 +15,11 @@
           "containerPath" : "container:DemoPostsList.xcodeproj",
           "identifier" : "C36E70532A2137C900F6188C",
           "name" : "DemoPostsList"
+        },
+        {
+          "containerPath" : "container:PostsList\/PostsList.xcodeproj",
+          "identifier" : "C3C021D62A5FC12D00DD2E2E",
+          "name" : "PostsList"
         }
       ]
     },
@@ -22,10 +27,19 @@
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:DemoPostsList.xcodeproj",
         "identifier" : "C36E707C2A213EF500F6188C",
         "name" : "DemoPostsListTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PostsList\/PostsList.xcodeproj",
+        "identifier" : "C3C021DE2A5FC12D00DD2E2E",
+        "name" : "PostsListTests"
       }
     }
   ],

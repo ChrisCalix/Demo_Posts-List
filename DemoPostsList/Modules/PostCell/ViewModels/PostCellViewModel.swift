@@ -6,6 +6,7 @@
 //
 
 import RxDataSources
+import PostsList
 
 public struct PostCellViewModel: IdentifiableType, Equatable {
     public typealias Identity = String

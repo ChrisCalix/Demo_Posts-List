@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import DemoPostsList
+@testable import PostsList
 
 extension LoadPostsFromLocalUseTestCase {
     

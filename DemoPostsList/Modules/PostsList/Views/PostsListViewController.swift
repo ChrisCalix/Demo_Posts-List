@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import PostsList
 
 public final class PostsListViewController: UIViewController {
     
@@ -26,9 +27,9 @@ public final class PostsListViewController: UIViewController {
         return cell
     }
     
-    private var viewModel: PostsListViewPresentable!
+    private var viewModel: PostsListViewPresentable?
     private var bag = DisposeBag()
-    public var viewModelBuilder: PostsListViewPresentable.viewModelBuilder!
+    public var viewModelBuilder: PostsListViewPresentable.viewModelBuilder?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,25 +49,25 @@ public final class PostsListViewController: UIViewController {
     }
     
     private func configureViewModel() {
-        viewModel = viewModelBuilder((
+        viewModel = viewModelBuilder?((
             textFilter: searchTextField.rx.text.orEmpty.asDriver(), ()
         ))
     }
     
     private func fetchAllPosts() {
-        viewModel.fetchAllPosts()
+        viewModel?.fetchAllPosts()
     }
     
     private func setupBinding() {
-        viewModel.output.sections
+        viewModel?.output.sections
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: bag)
         
-        viewModel.output.title
+        viewModel?.output.title
             .drive(navigationItem.rx.title)
             .disposed(by: bag)
         
-        viewModel.output.sections.map({ posts -> Bool in
+        viewModel?.output.sections.map({ posts -> Bool in
             posts[0].items.count != 0
         })
         .drive(emptyImageView.rx.isHidden)
@@ -76,7 +77,7 @@ public final class PostsListViewController: UIViewController {
             .rx
             .itemDeleted
             .subscribe(onNext: { indexPath in
-                self.viewModel.removePost(at: indexPath)
+                self.viewModel?.removePost(at: indexPath)
             })
             .disposed(by: bag)
     }
@@ -96,7 +97,7 @@ public final class PostsListViewController: UIViewController {
             guard let descriptionPost = self.validateAndReturnTextFieldValue(textField: descriptionTextField, messageForEmptyText: "We can't add this post, because you don't add any name or description") else { return}
 
             let newPost = PostModel(name: namePost, description: descriptionPost)
-            self.viewModel.addNewPost(using: newPost){ [weak self] isAdded in
+            self.viewModel?.addNewPost(using: newPost){ [weak self] isAdded in
                 guard let self else { return }
                 if !isAdded {
                     self.presentAlertAdvice(with: "We can't add this post, because already exist other with the same name and description")

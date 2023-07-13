@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PostsList/PostsList.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DemoPostsList.xcodeproj">
    </FileRef>
    <FileRef

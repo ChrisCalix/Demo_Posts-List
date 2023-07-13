@@ -10,8 +10,15 @@ import DemoPostsList
 
 class PostListSnapshotTests: XCTestCase {
     
-    func test_PostList() {
+    func test_delivers_EmptyPostList() {
         let sut = makeSUT()
+        
+        assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .light)), named: "EMPTY_POST_LIST_light")
+        assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .dark)), named: "EMPTY_POST_LIST_dark")
+    }
+    
+    func test_delivers_PostList() {
+        let sut = makeSUT(feedPostLists())
         
         assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .light)), named: "POST_LIST_light")
         assert(snapshot: sut.snapshot(for: .iPhone14Pro(style: .dark)), named: "POST_LIST_dark")
@@ -19,12 +26,15 @@ class PostListSnapshotTests: XCTestCase {
     }
     // MARK: - Helpers
     
-    private func makeSUT() -> PostsListViewController {
+    private func makeSUT(_ viewModelBuilder: PostsListViewModel.viewModelBuilder? = nil) -> PostsListViewController {
         let controller = PostsListViewController.instantiate(from: Constants.Views.home.rawValue)!
-        controller.viewModelBuilder = {
-            return PostsListViewModel(input: $0, dependencies: (title: "Post List", ()))
-        }
+        controller.viewModelBuilder = viewModelBuilder
+        controller.enforceLayoutCicle()
         return controller
+    }
+    
+    private func feedPostLists() -> PostsListViewModel.viewModelBuilder {
+        { PostsListViewModel(input: $0, dependencies: (title: "Post List", ())) }
     }
     
     func assert(snapshot: UIImage, named name: String, file: StaticString = #file, line: UInt = #line) {
@@ -75,4 +85,6 @@ class PostListSnapshotTests: XCTestCase {
         
         return data
     }
+    
+    
 }

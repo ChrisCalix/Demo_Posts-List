@@ -13,6 +13,13 @@ extension UIViewController {
     }
 }
 
+extension UIViewController {
+    func enforceLayoutCicle() {
+        loadViewIfNeeded()
+        RunLoop.current.run(until: Date())
+    }
+}
+
 struct SnapshotConfiguration {
     let size: CGSize
     let safeAreaInsets: UIEdgeInsets
