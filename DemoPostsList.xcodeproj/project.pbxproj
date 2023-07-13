@@ -68,7 +68,7 @@
 		C368851C2A21AE6D00BFF6B0 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		C368851F2A21B14500BFF6B0 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		C36885262A21CE1400BFF6B0 /* PostsListViewController+AddButton+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostsListViewController+AddButton+Actions.swift"; sourceTree = "<group>"; };
-		C36E70542A2137C900F6188C /* Demo_Posts List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo_Posts List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36E70542A2137C900F6188C /* DemoPostsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoPostsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E70572A2137C900F6188C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C36E70592A2137C900F6188C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C36E70602A2137CB00F6188C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		C36E70722A213A9400F6188C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C36E70742A213AB000F6188C /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
 		C36E70762A213B5800F6188C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C36E707D2A213EF500F6188C /* Demo_Posts ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo_Posts ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36E707D2A213EF500F6188C /* DemoPostsListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoPostsListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36E70862A213F6B00F6188C /* LoadPostsFromLocalUseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPostsFromLocalUseTestCase.swift; sourceTree = "<group>"; };
 		C36E70892A213FEF00F6188C /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		C36E708B2A2140D800F6188C /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
@@ -219,8 +219,8 @@
 		C36E70552A2137C900F6188C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C36E70542A2137C900F6188C /* Demo_Posts List.app */,
-				C36E707D2A213EF500F6188C /* Demo_Posts ListTests.xctest */,
+				C36E70542A2137C900F6188C /* DemoPostsList.app */,
+				C36E707D2A213EF500F6188C /* DemoPostsListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,9 +320,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C36E70532A2137C900F6188C /* Demo_Posts List */ = {
+		C36E70532A2137C900F6188C /* DemoPostsList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C36E70682A2137CB00F6188C /* Build configuration list for PBXNativeTarget "Demo_Posts List" */;
+			buildConfigurationList = C36E70682A2137CB00F6188C /* Build configuration list for PBXNativeTarget "DemoPostsList" */;
 			buildPhases = (
 				D018F2D1BC71DA42ECF609E3 /* [CP] Check Pods Manifest.lock */,
 				C36E70502A2137C900F6188C /* Sources */,
@@ -334,14 +334,14 @@
 			);
 			dependencies = (
 			);
-			name = "Demo_Posts List";
+			name = DemoPostsList;
 			productName = "Demo_Posts List";
-			productReference = C36E70542A2137C900F6188C /* Demo_Posts List.app */;
+			productReference = C36E70542A2137C900F6188C /* DemoPostsList.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C36E707C2A213EF500F6188C /* Demo_Posts ListTests */ = {
+		C36E707C2A213EF500F6188C /* DemoPostsListTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C36E70832A213EF600F6188C /* Build configuration list for PBXNativeTarget "Demo_Posts ListTests" */;
+			buildConfigurationList = C36E70832A213EF600F6188C /* Build configuration list for PBXNativeTarget "DemoPostsListTests" */;
 			buildPhases = (
 				FDFADF89D44A79A62C788D8E /* [CP] Check Pods Manifest.lock */,
 				C36E70792A213EF500F6188C /* Sources */,
@@ -353,9 +353,9 @@
 			dependencies = (
 				C36E70822A213EF600F6188C /* PBXTargetDependency */,
 			);
-			name = "Demo_Posts ListTests";
+			name = DemoPostsListTests;
 			productName = "Demo_Posts ListTests";
-			productReference = C36E707D2A213EF500F6188C /* Demo_Posts ListTests.xctest */;
+			productReference = C36E707D2A213EF500F6188C /* DemoPostsListTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -377,7 +377,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C36E704F2A2137C900F6188C /* Build configuration list for PBXProject "Demo_Posts List" */;
+			buildConfigurationList = C36E704F2A2137C900F6188C /* Build configuration list for PBXProject "DemoPostsList" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -390,8 +390,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C36E70532A2137C900F6188C /* Demo_Posts List */,
-				C36E707C2A213EF500F6188C /* Demo_Posts ListTests */,
+				C36E70532A2137C900F6188C /* DemoPostsList */,
+				C36E707C2A213EF500F6188C /* DemoPostsListTests */,
 			);
 		};
 /* End PBXProject section */
@@ -526,7 +526,7 @@
 /* Begin PBXTargetDependency section */
 		C36E70822A213EF600F6188C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C36E70532A2137C900F6188C /* Demo_Posts List */;
+			target = C36E70532A2137C900F6188C /* DemoPostsList */;
 			targetProxy = C36E70812A213EF600F6188C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -728,7 +728,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo_Posts List.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Demo_Posts List";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoPostsList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoPostsList";
 			};
 			name = Debug;
 		};
@@ -747,14 +747,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo_Posts List.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Demo_Posts List";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoPostsList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoPostsList";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C36E704F2A2137C900F6188C /* Build configuration list for PBXProject "Demo_Posts List" */ = {
+		C36E704F2A2137C900F6188C /* Build configuration list for PBXProject "DemoPostsList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36E70662A2137CB00F6188C /* Debug */,
@@ -763,7 +763,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C36E70682A2137CB00F6188C /* Build configuration list for PBXNativeTarget "Demo_Posts List" */ = {
+		C36E70682A2137CB00F6188C /* Build configuration list for PBXNativeTarget "DemoPostsList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36E70692A2137CB00F6188C /* Debug */,
@@ -772,7 +772,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C36E70832A213EF600F6188C /* Build configuration list for PBXNativeTarget "Demo_Posts ListTests" */ = {
+		C36E70832A213EF600F6188C /* Build configuration list for PBXNativeTarget "DemoPostsListTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36E70842A213EF600F6188C /* Debug */,

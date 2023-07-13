@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C36E70532A2137C900F6188C"
-               BuildableName = "Demo_Posts List.app"
-               BlueprintName = "Demo_Posts List"
-               ReferencedContainer = "container:Demo_Posts List.xcodeproj">
+               BuildableName = "DemoPostsList.app"
+               BlueprintName = "DemoPostsList"
+               ReferencedContainer = "container:DemoPostsList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,9 +40,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C36E707C2A213EF500F6188C"
-               BuildableName = "Demo_Posts ListTests.xctest"
-               BlueprintName = "Demo_Posts ListTests"
-               ReferencedContainer = "container:Demo_Posts List.xcodeproj">
+               BuildableName = "DemoPostsListTests.xctest"
+               BlueprintName = "DemoPostsListTests"
+               ReferencedContainer = "container:DemoPostsList.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C36E70532A2137C900F6188C"
-            BuildableName = "Demo_Posts List.app"
-            BlueprintName = "Demo_Posts List"
-            ReferencedContainer = "container:Demo_Posts List.xcodeproj">
+            BuildableName = "DemoPostsList.app"
+            BlueprintName = "DemoPostsList"
+            ReferencedContainer = "container:DemoPostsList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C36E70532A2137C900F6188C"
-            BuildableName = "Demo_Posts List.app"
-            BlueprintName = "Demo_Posts List"
-            ReferencedContainer = "container:Demo_Posts List.xcodeproj">
+            BuildableName = "DemoPostsList.app"
+            BlueprintName = "DemoPostsList"
+            ReferencedContainer = "container:DemoPostsList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
