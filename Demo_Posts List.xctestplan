@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "D1F005D7-0329-4C74-8D5E-F181FAD5A685",
+      "id" : "751B9558-CDBD-4A84-B5CB-CDFF36DEA7BB",
       "name" : "Configuration 1",
       "options" : {
 
@@ -9,7 +9,7 @@
     }
   ],
   "defaultOptions" : {
-
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {
