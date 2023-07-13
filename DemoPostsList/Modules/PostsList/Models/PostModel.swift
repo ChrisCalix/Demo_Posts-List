@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostModel: Decodable, Equatable {
+public struct PostModel: Decodable, Equatable {
     let name: String
     let description: String
 }

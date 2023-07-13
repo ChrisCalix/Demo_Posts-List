@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    static func instantiate(from storyboardName: String) -> Self? {
+    public static func instantiate(from storyboardName: String) -> Self? {
         let fullName = NSStringFromClass(self)
         let className = fullName.components(separatedBy: ".")[1]
         let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)

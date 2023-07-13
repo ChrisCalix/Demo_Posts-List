@@ -11,9 +11,9 @@ import RxCocoa
 import RxRelay
 import RxDataSources
 
-typealias PostsItemSection = AnimatableSectionModel<Int, PostCellViewModel>
+public typealias PostsItemSection = AnimatableSectionModel<Int, PostCellViewModel>
 
-protocol PostsListViewPresentable {
+public protocol PostsListViewPresentable {
     typealias Input = (
         textFilter: Driver<String>, ()
     )
@@ -34,21 +34,21 @@ protocol PostsListViewPresentable {
     func removePost(at indexPath: IndexPath?)
 }
 
-struct PostsListViewModel: PostsListViewPresentable {
+public struct PostsListViewModel: PostsListViewPresentable {
     typealias State = (posts: BehaviorRelay<[PostModel]>, ())
     
     private let state: State = ( posts: BehaviorRelay<[PostModel]>(value: []), ())
     private let lock = NSRecursiveLock()
-    let input: PostsListViewPresentable.Input
-    let output: PostsListViewPresentable.Output
+    public let input: PostsListViewPresentable.Input
+    public let output: PostsListViewPresentable.Output
     
-    init(input: PostsListViewPresentable.Input,
+    public init(input: PostsListViewPresentable.Input,
          dependencies: PostsListViewPresentable.Dependencies) {
         self.input = input
         self.output = PostsListViewModel.output(input: input, dependencies: dependencies, state: state)
     }
     
-    func fetchAllPosts() {
+    public func fetchAllPosts() {
         let reader = JSONFileReader()
         let localFeedLoader = LocalFeedLoader(fileName: Constants.JSONFile.postsList.rawValue,
                                               reader: reader)
@@ -68,7 +68,7 @@ struct PostsListViewModel: PostsListViewPresentable {
         }
     }
     
-    func addNewPost(using newPost: PostModel, completion: @escaping (Bool) -> Void) {
+    public func addNewPost(using newPost: PostModel, completion: @escaping (Bool) -> Void) {
         lock.lock();
         defer { lock.unlock() }
         var posts = state.posts.value
@@ -81,7 +81,7 @@ struct PostsListViewModel: PostsListViewPresentable {
         completion(true)
     }
     
-    func removePost(at indexPath: IndexPath?) {
+    public func removePost(at indexPath: IndexPath?) {
         lock.lock(); defer { lock.unlock() }
         var items = state.posts.value
         guard let indexPath else { return }

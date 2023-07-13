@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-final class PostsListViewController: UIViewController {
+public final class PostsListViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var emptyImageView: UIImageView!
@@ -28,9 +28,9 @@ final class PostsListViewController: UIViewController {
     
     private var viewModel: PostsListViewPresentable!
     private var bag = DisposeBag()
-    var viewModelBuilder: PostsListViewPresentable.viewModelBuilder!
+    public var viewModelBuilder: PostsListViewPresentable.viewModelBuilder!
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()

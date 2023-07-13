@@ -7,10 +7,10 @@
 
 import RxDataSources
 
-struct PostCellViewModel: IdentifiableType, Equatable {
-    typealias Identity = String
+public struct PostCellViewModel: IdentifiableType, Equatable {
+    public typealias Identity = String
     
-    var identity: String
+    public var identity: String
     let title: String
     let desctiption: String
     
